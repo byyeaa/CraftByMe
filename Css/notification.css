@@ -1,0 +1,198 @@
+:root{
+    --black: #000000;
+    --brown: #735140;
+    --dark_brown: #1A120B;
+    --white: #ffff;
+    --light-gray: #f0f2f5;
+}
+
+body {
+  margin: 0;
+  font-family: "geist";
+  background-color:white;
+  color: #1a1208;
+}
+
+.header {
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left, .header-center, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Lexend deca";
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 30px;
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+    opacity: 0.6;
+}
+
+.main-nav a:hover {
+    opacity: 1;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 500px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+    color: black;
+    width: 100%;
+}
+
+.search-bar .search-icon {
+    color: black;
+    font-size: 1.2em;
+}
+
+.notification-icon, .profile-icon {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.section {
+  padding: 2rem;
+  background-color: var(--white);
+}
+
+h2 {
+  color: #3c2a21;
+}
+
+.notifications {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.notifications li {
+  background-color: var(--dark_brown);
+  color: #f5f5dc;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s;
+}
+
+.notifications li:hover {
+  transform: scale(1.02);
+}
+
+.notif-content time {
+  display: block;
+  font-size: 0.85rem;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.footer-craftbyme {
+    background-color: var(--brown); 
+    color: var(--white);
+    padding: 50px 10%;
+    font-size: 15px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "lexend deca";
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.footer-column ul li img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}

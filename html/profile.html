@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftByMe Profile</title>
+    <link rel="stylesheet" href="../Css/profile.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Geist:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <a href="../index.html" class="logo">CraftByMe</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="events.html">Events</a></li> </ul>
+                </nav>
+            </div>
+            <div class="header-center">
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <span class="material-icons search-icon">search</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <a href="notification.html">
+                    <span class="material-icons notification-icon">notifications</span>
+                </a>
+                <a href="profile.html" class="active"> <span class="material-icons profile-icon">account_circle</span>
+                </a>
+            </div>
+        </header>
+
+        <section class="profile-section">
+            <div class="profile-picture-wrapper">
+                <img id="profile-pic" src="" class="profile-pic">
+                <input type="file" id="profile-pic-input" accept="image/*" style="display: none;">
+            </div>
+            <label for="profile-pic-input" class="edit-icon">
+                <i class="fas fa-pencil-alt"></i>
+            </label>
+            <label class="edit-icon banner-edit-icon">
+            <i class="fas fa-camera"></i> </label>
+        </section>
+
+        <main class="main-content">
+            <div class="user-info-layout">
+                <div class="user-details">
+                    <h1 class="user-name">craffyyyt</h1>
+                    <p class="username">@flovver</p>
+                </div>
+                <span class="join-date">Join On <br> June 2025</span>
+            </div>
+
+            <div class="stats-layout">
+                <div class="stat-item">
+                    <span class="stat-number">19</span>
+                    <span class="stat-label">Following</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">19</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+            </div>
+
+            <div class="sections-wrapper">
+                <div class="posts-column">
+                    <h2 class="section-title">POSTS</h2>
+                    <div class="posts-section">
+                        <div class="post-card">
+                            <div class="post-header">
+                                <img src="../assets/gudetama.jpg" class="poster-avatar"></img>
+                                <div class="poster-info">
+                                    <span class="poster-name">craffyyyt</span>
+                                    <span class="post-time">9 hr ago</span>
+                                </div>
+                            </div>
+                            <p class="post-text">You can ask the flowers</p>
+                            <div class="post-media">
+                                <iframe width="560"
+                                height="315"
+                                src="https://www.youtube.com/embed/aLn_bKG6wsI?si=FVPL7g8rogyJpuZB"
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="who-to-follow-column">
+                    <h2 class="section-title">WHO TO FOLLOW</h2>
+                    <div class="who-to-follow-section">
+                        <div class="follow-card">
+                            <div class="follow-info">
+                                <img src="../assets/ikan.jpg" class="follow-avatar"></img>
+                                <div class="follow-text">
+                                    <span class="follow-name">crafty_artist</span>
+                                    <span class="follow-username">@artlover</span>
+                                </div>
+                            </div>
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="follow-card">
+                            <div class="follow-info">
+                                <img src="../assets/snoopy.jpg" class="follow-avatar"></img>
+                                <div class="follow-text">
+                                    <span class="follow-name">DIY_master</span>
+                                    <span class="follow-username">@creativediy</span>
+                                </div>
+                            </div>
+                            <button class="follow-button">Follow</button>
+                        </div>
+                        <div class="follow-card">
+                            <div class="follow-info">
+                                <img src="../assets/craftmaster.jpg" class="follow-avatar"></img>
+                                <div class="follow-text">
+                                    <span class="follow-name">Handmade_haven</span>
+                                    <span class="follow-username">@craft_ideas</span>
+                                </div>
+                            </div>
+                            <button class="follow-button">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer-craftbyme">
+        <div class="footer-content">
+             <div class="footer-column footer-logo">
+            CraftByMe
+        </div>
+
+        <div class="footer-column">
+            <h3>Social</h3>
+            <ul>
+                <li><a href="#"><img src="../assets/hugeicons--instagram.png" > craftbyme.id</a></li>
+                <li><a href="#"><img src="../assets/ri--twitter-x-fill.png" > craftbyme.id</a></li>
+                <li><a href="#"><img src="../assets/circum--linkedin.png" > craftbyme.id</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <ul>
+                <li><a href="#">Teams</a></li>
+                <li><a href="#">Mission</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQ's</a></li>
+            </ul>
+        </div>
+        </div>
+       
+    </footer>
+    <script src="../js/profile.js"></script>
+</body>
+</html>

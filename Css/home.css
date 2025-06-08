@@ -1,0 +1,393 @@
+:root{
+    --black: #000000;
+    --brown: #735140;
+    --dark_brown: #1A120B;
+    --white: #ffff;
+    --light-gray: #f0f2f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+  text-decoration: none;
+  color: white;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "lexend deca";
+}
+
+body{
+    font-family:"geist";
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--dark_brown);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.home-container{
+    font-family: "geist";
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    background-color: var(--brown);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-left, .header-center, .header-right {
+    font-family: "geist";
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 30px;
+    display: flex;
+}
+
+.main-nav li {
+    margin-right: 20px;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+    opacity: 0.6;
+}
+
+.main-nav a.active {
+    opacity: 1;
+    border-bottom: 2px solid var(--dark_brown);
+}
+
+.main-nav a:hover {
+    opacity: 1;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: 500px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    padding: 5px;
+    outline: none;
+    color: black;
+    width: 100%;
+}
+
+.search-bar .search-icon {
+    color: black;
+    font-size: 1.2em;
+}
+
+.notification-icon, .profile-icon {
+    color: var(--white);
+    font-size: 1.5em;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 50px 20px;
+  text-align: center;
+  background-image: linear-gradient(rgba(41, 40, 40, 0.84), rgba(41, 40, 40, 0.84)), url(../assets/header_home.jpg);
+  
+}
+
+.hero h2 {
+color: var(--white);
+font-weight: 800;
+font-size: 50px;
+margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: white;
+}
+
+.section {
+  padding: 40px 20px;
+}
+
+.section h2 {
+color: var(--brown);
+text-align: left;
+font-size: 2em;
+margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 15px 0 5px;
+}
+
+.card p {
+  font-size: 0.9em;
+}
+
+.trending-section {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 1 1 40%; /* Takes about 40% of the space */
+    min-width: 300px; /* Ensure it doesn't get too small */
+    max-height: 600px; /* Fixed height */
+    overflow-y: auto; /* Enable vertical scrollbar */
+    padding-right: 10px; /* Space for scrollbar */
+}
+
+
+.post-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(50% - 20px);
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .post-card {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+.post-media {
+    position: relative; /* Penting jika ada elemen child yang menggunakan positioning absolut */
+    width: 100%; /* Pastikan mengambil seluruh lebar dari parent-nya (.post-card) */
+    aspect-ratio: 16 / 9; /* **Ini kuncinya:** Menetapkan rasio aspek 16:9 untuk kontainer */
+    overflow: hidden; /* Pastikan konten yang melebihi batas kontainer disembunyikan (untuk object-fit) */
+    border-radius: 8px; /* Sesuaikan dengan border-radius kartu jika ada */
+    margin-bottom: 15px; /* Contoh: beri sedikit jarak di bawah media */
+}
+
+.post-media img {
+    width: 100%; /* Memenuhi lebar kontainer .post-media */
+    height: 100%; /* Memenuhi tinggi kontainer .post-media (sesuai aspect-ratio) */
+    object-fit: cover; /* **Penting:** Memastikan gambar mengisi seluruh area tanpa distorsi,
+                            namun bisa ada cropping pada bagian gambar yang tidak pas dengan rasio 16:9 */
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+}
+
+.post-media iframe {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+
+.trending-section {
+    padding: 40px 20px;
+}
+
+.trending-section h2 {
+    justify-content: left;
+    font-size: 32px;
+    color: var(--brown);
+    margin-bottom: 30px;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user-avatar-small-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post-meta {
+    text-align: left;
+}
+
+.post-username {
+    font-weight: bold;
+    color: #555;
+}
+
+.post-time {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.post-text {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Styling untuk bagian "FOR YOU" secara keseluruhan */
+.for-you {
+    padding: 40px 20px; /* Padding di sekitar bagian ini */
+    text-align: center; /* Untuk memusatkan grid secara keseluruhan (opsional, bisa dihapus jika h2 di-left-align) */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.for-you h2 { 
+    color: var(--brown);
+    text-align: left; 
+    font-size: 32px; 
+    margin-bottom: 30px;
+    grid-column: 1 / -1; 
+}
+
+.for-you .post-media {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.for-you .post-media iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+}
+
+.for-you .post-media:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.footer-craftbyme {
+    background-color: var(--brown); 
+    color: var(--white);
+    padding: 50px 10%;
+    font-size: 15px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "lexend deca";
+}
+
+.footer-column h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #eee;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #bbb;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer-column ul li a:hover {
+    color: white;
+}
+
+.footer-column ul li img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
