@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         exploreButton.addEventListener('click', function() {
             console.log('Explore button clicked! Redirecting to home page...');
             
-            window.location.href = '../html/home.html';
+            window.location.href = 'html/home.html';
         });
     } else {
         console.error("Error: Explore button with ID 'exploreButton' not found.");
