@@ -113,8 +113,8 @@ h2 {
 }
 
 .notifications li {
-  background-color: var(--dark_brown);
-  color: #f5f5dc;
+  background-color: var(--light-gray);
+  color: var(--brown);
   margin-bottom: 1rem;
   padding: 1rem;
   border-radius: 10px;
@@ -129,7 +129,7 @@ h2 {
 .notif-content time {
   display: block;
   font-size: 0.85rem;
-  color: white;
+  color: var(--brown);
   margin-top: 0.5rem;
 }
 

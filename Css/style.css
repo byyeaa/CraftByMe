@@ -324,6 +324,7 @@ body {
     margin: 0;
     padding-left: 30px;
     display: flex;
+    width: 320px;
 }
 
 .main-nav li {
@@ -387,7 +388,7 @@ body {
 }
 
 .left-column {
-    flex: 1 1 55%; /* Takes about 55% of the space */
+    flex: 1 1 55%; 
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -546,7 +547,6 @@ h2 {
     background-color: #333;
 }
 
-/* Upcoming Events Section */
 .upcoming-events-section {
     background-color: var(--card-background);
     border-radius: 8px;
@@ -558,12 +558,12 @@ h2 {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px; /* Spacing between multiple event cards */
+    margin-bottom: 15px; 
 }
 
 .event-image-placeholder {
     width: 80px;
-    height: 80px;
+    height: auto;
     background-color: var(--medium-gray);
     border-radius: 8px;
     flex-shrink: 0;

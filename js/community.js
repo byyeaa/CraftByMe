@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = (e) => {
                     const mediaElement = document.createElement('video');
                     mediaElement.src = e.target.result;
-                    mediaElement.controls = false; // Set to false so custom JS can control or if you want no controls
+                    mediaElement.controls = false; 
                     mediaElement.autoplay = false;
                     mediaElement.muted = true;
                     mediaElement.loop = true;
