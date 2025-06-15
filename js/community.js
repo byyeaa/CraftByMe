@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const postCard = document.createElement('div');
             postCard.classList.add('post-card');
 
+            // Create post header and text
             postCard.innerHTML = `
                 <div class="post-header">
                     <img src="../assets/gudetama.jpg" class="user-avatar-small-placeholder">
@@ -148,13 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="post-time">just now</div>
                     </div>
                 </div>
+                <p class="post-text">${postText}</p>
             `;
 
-            const postTextElement = document.createElement('p');
-            postTextElement.classList.add('post-text');
-            postTextElement.textContent = postText;
-            postCard.appendChild(postTextElement);
-
+            // Append media container if files are selected
             if (selectedMediaFiles.length > 0) {
                 const mediaContainer = document.createElement('div');
                 mediaContainer.classList.add('post-media');
@@ -165,13 +163,23 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (file.type.startsWith('image/')) {
                             const img = document.createElement('img');
                             img.src = e.target.result;
-                            img.style.maxWidth = '100%';
+                            img.style.width = '100%';
+                            img.style.height = '100%';
+                            img.style.objectFit = 'contain';
+                            img.style.position = 'absolute';
+                            img.style.top = '0';
+                            img.style.left = '0';
                             mediaContainer.appendChild(img);
                         } else if (file.type.startsWith('video/')) {
                             const video = document.createElement('video');
                             video.src = e.target.result;
                             video.controls = true;
-                            video.style.maxWidth = '100%';
+                            video.style.width = '100%';
+                            video.style.height = '100%';
+                            video.style.objectFit = 'contain';
+                            video.style.position = 'absolute';
+                            video.style.top = '0';
+                            video.style.left = '0';
                             mediaContainer.appendChild(video);
                         } else {
                             const fileInfo = document.createElement('div');
@@ -183,11 +191,91 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
                     reader.readAsDataURL(file);
                 });
-
                 postCard.appendChild(mediaContainer);
             }
 
-            trendingSection.insertBefore(postCard, trendingSection.children[1]);
+            // Append post actions and comment section
+            const postActionsHTML = `
+                <div class="post-actions">
+                    <button class="like-button"><span class="material-icons">favorite</span> Like (<span class="like-count">0</span>)</button>
+                    <button class="comment-toggle-button"><span class="material-icons">comment</span> Comment</button>
+                    <button class="bookmark-button"><span class="material-icons">bookmark</span> Bookmark</button>
+                </div>
+                <div class="comment-section" style="display: none;">
+                    <ul class="comment-list"></ul>
+                    <div class="comment-input-container">
+                        <input type="text" class="comment-input" placeholder="Add a comment...">
+                        <button class="submit-comment">Submit</button>
+                    </div>
+                </div>
+            `;
+            postCard.insertAdjacentHTML('beforeend', postActionsHTML);
+
+            // Insert the new post at the second position in trending section
+            const h2Element = trendingSection.querySelector('h2');
+            if (h2Element && trendingSection.children.length > 1) {
+                trendingSection.insertBefore(postCard, trendingSection.children[1]);
+            } else {
+                trendingSection.appendChild(postCard);
+            }
+
+            // Add event listeners for the newly created post
+            const newLikeButton = postCard.querySelector(".like-button");
+            const newCommentToggleButton = postCard.querySelector(".comment-toggle-button");
+            const newBookmarkButton = postCard.querySelector(".bookmark-button");
+            const newSubmitCommentButton = postCard.querySelector(".submit-comment");
+
+            newLikeButton.addEventListener("click", () => {
+                const countSpan = newLikeButton.querySelector(".like-count");
+                let count = parseInt(countSpan.textContent, 10);
+                const iconSpan = newLikeButton.querySelector(".material-icons");
+
+                if (newLikeButton.classList.contains("liked")) {
+                    countSpan.textContent = count - 1;
+                    newLikeButton.classList.remove("liked");
+                    if (iconSpan) {
+                        iconSpan.style.color = "";
+                    }
+                } else {
+                    countSpan.textContent = count + 1;
+                    newLikeButton.classList.add("liked");
+                    if (iconSpan) {
+                        iconSpan.style.color = "red";
+                    }
+                }
+            });
+
+            // PERBAIKAN: Menggunakan .closest('.post-card') untuk mencari comment-section
+            newCommentToggleButton.addEventListener("click", () => {
+                const commentSection = newCommentToggleButton.closest('.post-card').querySelector(".comment-section");
+                commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
+            });
+
+            // PERBAIKAN: Menggunakan .closest('.comment-section') untuk mencari comment-list
+            newSubmitCommentButton.addEventListener("click", () => {
+                const commentInput = newSubmitCommentButton.parentElement.querySelector(".comment-input");
+                const commentList = newSubmitCommentButton.closest('.comment-section').querySelector(".comment-list");
+
+                if (commentInput.value.trim()) {
+                    const li = document.createElement("li");
+                    li.textContent = commentInput.value;
+                    commentList.appendChild(li);
+                    commentInput.value = "";
+                }
+            });
+
+            newBookmarkButton.addEventListener("click", () => {
+                newBookmarkButton.classList.toggle("bookmarked");
+                const iconSpan = newBookmarkButton.querySelector(".material-icons");
+
+                if (newBookmarkButton.classList.contains("bookmarked")) {
+                    iconSpan.textContent = "bookmark_added";
+                    newBookmarkButton.innerHTML = `<span class="material-icons">bookmark_added</span> Bookmarked`;
+                } else {
+                    iconSpan.textContent = "bookmark";
+                    newBookmarkButton.innerHTML = `<span class="material-icons">bookmark</span> Bookmark`;
+                }
+            });
 
             whatHappeningInput.value = '';
             selectedMediaFiles = [];
@@ -195,5 +283,68 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const likeButtons = document.querySelectorAll(".like-button");
+    const commentToggles = document.querySelectorAll(".comment-toggle-button");
+    const bookmarkButtons = document.querySelectorAll(".bookmark-button");
+
+    likeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const countSpan = btn.querySelector(".like-count");
+            let count = parseInt(countSpan.textContent, 10);
+            const iconSpan = btn.querySelector(".material-icons");
+
+            if (btn.classList.contains("liked")) {
+                countSpan.textContent = count - 1;
+                btn.classList.remove("liked");
+                if (iconSpan) {
+                    iconSpan.style.color = "";
+                }
+            } else {
+                countSpan.textContent = count + 1;
+                btn.classList.add("liked");
+                if (iconSpan) {
+                    iconSpan.style.color = "red";
+                }
+            }
+        });
+    });
+
+    commentToggles.forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+            // PERBAIKAN: Menggunakan .closest('.post-card') untuk mencari comment-section pada post yang sudah ada
+            const commentSection = toggle.closest('.post-card').querySelector(".comment-section");
+            commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
+        });
+    });
+
+    document.querySelectorAll(".submit-comment").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const commentInput = btn.parentElement.querySelector(".comment-input");
+            // PERBAIKAN: Menggunakan .closest('.comment-section') untuk mencari comment-list pada post yang sudah ada
+            const commentList = btn.closest('.comment-section').querySelector(".comment-list");
+
+            if (commentInput.value.trim()) {
+                const li = document.createElement("li");
+                li.textContent = commentInput.value;
+                commentList.appendChild(li);
+                commentInput.value = "";
+            }
+        });
+    });
+
+    bookmarkButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            btn.classList.toggle("bookmarked");
+            const iconSpan = btn.querySelector(".material-icons");
+
+            if (btn.classList.contains("bookmarked")) {
+                iconSpan.textContent = "bookmark_added";
+                btn.innerHTML = `<span class="material-icons">bookmark_added</span> Bookmarked`;
+            } else {
+                iconSpan.textContent = "bookmark";
+                btn.innerHTML = `<span class="material-icons">bookmark</span> Bookmark`;
+            }
+        });
+    });
     updateMediaPreview();
 });

@@ -1,0 +1,138 @@
+:root {
+    --light-gray: #f0f2f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #666;
+    --border-color: #ddd;
+    --card-background: #fff;
+    --header-bg: #222;
+    --header-text: #fff;
+    --input-bg: #f9f9f9;
+    --black: #000000;
+    --brown: #735140;
+    --dark_brown: #1A120B;
+    --white: #ffff;
+}
+
+.registration-page-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            font-family: "geist";
+        }
+
+        .registration-page-container h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+            font-family: "geist";
+            font-size: 2.2em;
+            line-height: 1.2;
+        }
+
+        .event-details-display {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .event-details-display img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .event-details-display h2 {
+            font-size: 1.8em;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .event-details-display p {
+            font-size: 1em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .event-details-display .event-meta {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        .registration-form-section {
+            padding: 20px 0;
+        }
+
+        .registration-form-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .registration-form-section input[type="text"],
+        .registration-form-section input[type="email"],
+        .registration-form-section input[type="number"],
+        .registration-form-section textarea {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+        }
+
+        .registration-form-section input[type="text"]:focus,
+        .registration-form-section input[type="email"]:focus,
+        .registration-form-section input[type="number"]:focus,
+        .registration-form-section textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+        }
+
+        .registration-form-section .form-group {
+            margin-bottom: 20px;
+        }
+
+        .registration-form-section button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--dark_brown);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .registration-form-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .icon-with-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            justify-content: center;
+        }
+
+        .icon-with-text .material-icons {
+            font-size: 1.2em;
+            color: #888;
+        }

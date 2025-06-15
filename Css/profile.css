@@ -47,11 +47,11 @@ body {
 
 
 .logo{
-  text-decoration: none;
-  color: white;
-  font-size: 35px;
-  font-weight: 600;
-  font-family: "lexend deca";
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "lexend deca";
 }
 
 .main-nav ul {
@@ -110,28 +110,27 @@ body {
     cursor: pointer;
 }
 
-/* --- REVISED PROFILE SECTION STYLES --- */
-.profile-section {
-    /* Initial banner background */
-    background-image: url(../assets/banner_profile.jpg); /* Keep your default banner image */
-    background-size: cover; /* Ensure image covers the section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
 
-    position: relative; /* Crucial for positioning the profile picture absolutely within it */
-    width: 100%; /* Take full width */
-    height: 200px; /* Set a fixed height for the banner area */
+.profile-section {
+    background-image: url(../assets/banner_profile.jpg); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    position: relative;
+    width: 100%;
+    height: 200px;
     display: flex;
-    justify-content: center; /* Center the profile picture horizontally */
-    align-items: flex-end; /* Align the profile picture to the bottom */
-    padding-bottom: 75px; /* Add padding here to make space for the bottom half of the profile picture */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
-    margin-bottom: 20px; /* Space between this section and user-info-layout */
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 75px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
 }
 
 .profile-picture-wrapper {
-    position: absolute; /* Position absolutely within profile-section */
-    bottom: -75px; /* Move half its height down from the bottom of profile-section */
+    position: absolute;
+    bottom: -75px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -141,7 +140,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10; /* Ensure it's above other content */
+    z-index: 10;
 }
 
 .profile-pic {
@@ -153,36 +152,36 @@ body {
 
 .edit-icon {
     position: absolute;
-    bottom: -60px; /* Adjust this to be just below the profile picture's bottom edge */
-    right: calc(50% - (150px / 2) + 5px); /* Position relative to the center of the profile picture wrapper */
+    bottom: -60px;
+    right: calc(50% - (150px / 2) + 5px);
     background-color: var(--primary-brown);
     color: var(--white);
     border-radius: 50%;
-    width: 30px; /* Fixed width/height for the icon */
-    height: 30px; /* Fixed width/height for the icon */
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px; /* Icon size */
+    font-size: 14px;
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 11; /* Ensure edit icon is above profile picture */
+    z-index: 11;
 }
 
 .edit-icon:hover {
-    background-color: #5A3F2F; /* Darker brown on hover */
+    background-color: #5A3F2F;
 }
 
 .banner-edit-icon {
     position: absolute;
-    top: 10px; /* Sesuaikan posisi vertikal */
-    right: 10px; /* Sesuaikan posisi horizontal */
-    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang untuk visibilitas */
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 8px;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 10; /* Pastikan di atas elemen lain jika ada tumpang tindih */
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -211,7 +210,7 @@ body {
     font-weight: 600;
     margin-bottom: 5px;
     color: var(--primary-brown);
-    margin-top: 0; /* Penting untuk konsistensi */
+    margin-top: 0;
 }
 
 .username {
@@ -255,60 +254,56 @@ body {
     display: inline-block;
 }
 
-/* Sections Wrapper for Posts and Who to Follow */
 .sections-wrapper {
     display: flex;
     gap: 30px;
     margin-top: 30px;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start; /* Memastikan kolom sejajar di bagian atas */
+    align-items: flex-start;
 }
 
 .posts-column {
     flex: 2;
     min-width: 400px;
     max-width: 700px;
-    padding-top: 20px; /* SESUAIKAN DENGAN PADDING who-to-follow-column */
-    padding-left: 20px; /* Tambahkan padding agar judul tidak terlalu mepet kiri */
-    padding-right: 20px; /* Tambahkan padding */
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .who-to-follow-column {
     flex: 1;
     min-width: 280px;
     max-width: 350px;
-    background-color: var(--light-grey); /* Menggunakan variabel light-grey */
+    background-color: var(--light-grey);
     border-radius: 8px;
-    padding: 20px; /* Ini sudah ada, tidak perlu diubah jika sudah 20px */
+    padding: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Section Title - DEFINISI SATU-SATUNYA UNTUK JUDUL SEKSI */
 .section-title {
-    font-size: 1.5em; /* 20px -> 1.5em jika base font 16px */
-    font-weight: 600; /* Bold */
+    font-size: 1.5em;
+    font-weight: 600;
     color: var(--primary-brown);
-    padding-bottom: 10px; /* Ruang antara teks judul dan garis */
+    padding-bottom: 10px;
     text-align: left;
     position: relative;
-    display: inline-block; /* Agar lebar garis mengikuti lebar teks */
-    margin-top: 0; /* Hapus margin atas default */
-    margin-bottom: 20px; /* Ruang antara judul dan konten di bawahnya */
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
-/* Pseudo-elemen untuk membuat garis di bawah judul */
 .section-title::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%; /* Lebar garis akan 100% dari lebar teks judul */
-    height: 3px; /* Ketebalan garis */
-    background-color: var(--primary-brown); /* Warna garis */
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-brown);
 }
 
-/* Posts Section */
 .posts-section {
     display: flex;
     flex-direction: column;
@@ -364,7 +359,7 @@ body {
 .post-media {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* Rasio aspek 16:9 untuk video */
+    padding-top: 56.25%;
     height: 0;
     overflow: hidden;
     border-radius: 8px;
@@ -380,7 +375,6 @@ body {
     border: none;
 }
 
-/* Who to Follow Section */
 .who-to-follow-section {
     display: flex;
     flex-direction: column;
@@ -408,7 +402,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--dark-grey); /* Menggunakan dark-grey untuk placeholder */
+    background-color: var(--dark-grey);
     margin-right: 10px;
     flex-shrink: 0;
 }
@@ -444,9 +438,20 @@ body {
     background-color: #5A3F2F;
 }
 
-/* Footer Styles */
+.follow-button.followed {
+    background-color: var(--white); /* Latar belakang putih */
+    color: var(--primary-brown); /* Teks warna coklat utama */
+    border: 1px solid var(--primary-brown); /* Border coklat */
+}
+
+.follow-button.followed:hover {
+    background-color: var(--light-grey); /* Warna sedikit berbeda saat hover di status "followed" */
+    color: var(--primary-brown);
+    border-color: var(--primary-brown);
+}
+
 .footer-craftbyme {
-    background-color: var(--primary-brown); /* Menggunakan variabel primary-brown */
+    background-color: var(--primary-brown);
     color: var(--white);
     padding: 50px 10%;
     font-size: 15px;

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Event - CraftByMe</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Geist:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css/regisevent.css">
+</head>
+<body>
+    <div class="registration-page-container">
+        <div class="event-details-display">
+            <img id="event-image" src="" alt="Event Image Placeholder">
+            <h1 id="event-main-title">Loading Event Details...</h1>
+            <p id="event-description-full"></p>
+            <div class="event-meta">
+                <p class="icon-with-text">
+                    <span class="material-icons">event</span>
+                    <span id="event-date"></span>
+                </p>
+                <p class="icon-with-text">
+                    <span class="material-icons">schedule</span>
+                    <span id="event-time"></span>
+                </p>
+            </div>
+        </div>
+
+        <div class="registration-form-section">
+            <h2>Register for this Event</h2>
+            <form id="registration-form" action="/submit-registration" method="POST">
+                <input type="hidden" id="hidden-event-id" name="eventId" value="">
+                <input type="hidden" id="hidden-event-name" name="eventName" value="">
+
+                <div class="form-group">
+                    <label for="fullName">Full name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailAddress">Email address</label>
+                    <input type="email" id="emailAddress" name="emailAddress" placeholder="Email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="dietaryRestrictions">Dietary restrictions (optional)</label>
+                    <input type="text" id="dietaryRestrictions" name="dietaryRestrictions" placeholder="e.g., Vegetarian, Gluten-free">
+                </div>
+
+                <div class="form-group">
+                    <label for="numGuests">Number of Guests (optional, including yourself if applicable)</label>
+                    <input type="number" id="numGuests" name="numGuests" min="1" value="1" placeholder="1">
+                </div>
+
+                <button type="submit" id="submit-button">Register Now</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/regisevent.js"></script> 
+    </body>
+</html>

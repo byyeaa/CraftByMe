@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Profile Picture Logic ---
     const profilePicInput = document.getElementById('profile-pic-input');
     const profilePic = document.getElementById('profile-pic');
-    const profilePicEditIcon = document.querySelector('.edit-icon'); // Ubah selector ini
+    const profilePicEditIcon = document.querySelector('.edit-icon');
 
     if (profilePicInput && profilePic && profilePicEditIcon) {
+        if (!profilePic.src || profilePic.src === window.location.href) {
+            profilePic.src = '../assets/gudetama.jpg';
+        }
+
         profilePicEditIcon.addEventListener('click', function(e) {
-            e.stopPropagation(); // Pastikan ini mencegah event menyebar ke banner-edit-icon atau profile-section
+            e.stopPropagation();
             profilePicInput.click();
         });
 
@@ -22,20 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Banner Background Logic ---
     const profileSection = document.querySelector('.profile-section');
-    const bannerEditIcon = document.querySelector('.banner-edit-icon'); // Selector baru untuk ikon banner
+    const bannerEditIcon = document.querySelector('.banner-edit-icon');
 
-    if (profileSection && bannerEditIcon) { // Pastikan ikon banner ada
+    if (profileSection && bannerEditIcon) {
         const bannerBgInput = document.createElement('input');
         bannerBgInput.type = 'file';
         bannerBgInput.accept = 'image/*';
         bannerBgInput.style.display = 'none';
         document.body.appendChild(bannerBgInput);
 
-        // Ubah trigger untuk banner dari klik profileSection menjadi klik bannerEditIcon
-        bannerEditIcon.addEventListener('click', function(e) { // Tambahkan listener ke ikon banner
-            e.stopPropagation(); // Penting: Pastikan ini mencegah klik menyebar ke profile-section itu sendiri
+        bannerEditIcon.addEventListener('click', function(e) {
+            e.stopPropagation();
             bannerBgInput.click();
         });
 
@@ -51,16 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 reader.readAsDataURL(file);
             }
         });
-
-        // Hapus atau modifikasi bagian ini jika tidak lagi diperlukan:
-        // profileSection.addEventListener('click', function(e) {
-        //     const isClickOnProfilePicArea = profilePic && profilePicEditIcon &&
-        //         (profilePic.contains(e.target) || profilePicEditIcon.contains(e.target));
-        //     if (!isClickOnProfilePicArea) {
-        //         bannerBgInput.click();
-        //     }
-        // });
-        // Karena sekarang kita punya ikon khusus, logika di atas bisa dihapus
-        // atau disederhanakan jika ada area lain di profile-section yang boleh diklik.
     }
+
+    const handleFollowButtonClick = (button) => {
+        if (button.classList.contains('followed')) {
+            button.textContent = 'Follow';
+            button.classList.remove('followed');
+        } else {
+            button.textContent = 'Following';
+            button.classList.add('followed');
+        }
+    };
+
+    const followButtons = document.querySelectorAll('.follow-button');
+    followButtons.forEach(button => {
+        button.addEventListener('click', () => handleFollowButtonClick(button));
+    });
 });

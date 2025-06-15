@@ -1,11 +1,19 @@
-:root{
+:root {
     --black: #000000;
     --brown: #735140;
     --dark_brown: #1A120B;
     --white: #ffff;
     --light-gray: #f0f2f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #666;
+    --border-color: #ddd;
+    --card-background: #fff;
+    --header-bg: #222;
+    --header-text: #fff;
+    --input-bg: #f9f9f9;
+    --accent_color: #735140; /* Defined based on your use */
+    --dark_accent_color: #1A120B; /* Defined based on your use */
 }
-
 
 * {
     margin: 0;
@@ -13,140 +21,140 @@
     box-sizing: border-box;
 }
 
-.background{
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(rgba(46, 45, 45, 0.84), rgba(46, 45, 45, 0.84)), url(../assets/landingpage.jpg);
-  background-size: cover;
-  background-position: center ;
+.background {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(46, 45, 45, 0.84), rgba(46, 45, 45, 0.84)), url(../assets/landingpage.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.navbar{
-  width: 85%;
-  margin: auto;
-  padding: 35px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.logo{
-  text-decoration: none;
-  color: white;
-  font-size: 35px;
-  font-weight: 600;
-  font-family: "lexend deca";
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "lexend deca";
 }
 
-.navbar ul li{
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-  position: relative;
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
 }
 
-.navbar ul li a{
-  text-decoration: none;
-  color: white;
-  font-family: "geist";
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "geist";
 }
 
-.navbar ul li::after{
-  content: '';
-  height: 3px;
-  width: 0;
-  background: var(--dark_brown);
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  transition:  0.5s;
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: var(--dark_brown);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
 }
 
-.navbar ul li:hover::after{
-  width: 100%;
+.navbar ul li:hover::after {
+    width: 100%;
 }
 
-.content{
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  transform:translateY(-50%) ;
-  text-align: center;
-  color: white;
-  font-family: "geist";
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    font-family: "geist";
 }
 
-.content h1{
-  font-size: 70px;
-  margin-top: 80px;
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
 }
 
-.content p{
-  margin: 20px auto;
-  line-height: 25px;
+.content p {
+    margin: 20px auto;
+    line-height: 25px;
 }
 
-button{
-  width: 200px;
-  padding: 15px 0;
-  text-align: center;
-  margin: 20px 10px ;
-  border-radius: 25px;
-  font-weight:  bold;
-  cursor: pointer;
-  color: white;
-  background: #735140;
-  border: 1px solid #735140;
-  position: relative;
-  overflow: hidden;
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: #735140;
+    border: 1px solid #735140;
+    position: relative;
+    overflow: hidden;
 }
 
-button:hover{
-background-color: var(--dark_brown) ;
-color: var(--brown);
-border: var(--dark_brown);
+button:hover {
+    background-color: var(--dark_brown);
+    color: var(--brown);
+    border: var(--dark_brown);
 }
 
-.container{
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  margin-top: 0;
-  background: var(--dark_brown);
-  background-size: cover;
-  font-family: "geist";
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    background: var(--dark_brown);
+    background-size: cover;
+    font-family: "geist";
 }
 
-.item{
-  position: absolute;
-  top: 0;
-  left: 0 ;
-  width: 58%;
-  height: 100%;
-  color: var(--white);
-  background-image: linear-gradient(rgba(46, 45, 45, 0.84), rgba(46, 45, 45, 0.84)), url(../assets/login.jpg);
-  background-size: cover;
-  padding: 80px;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+.item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    color: var(--white);
+    background-image: linear-gradient(rgba(46, 45, 45, 0.84), rgba(46, 45, 45, 0.84)), url(../assets/login.jpg);
+    background-size: cover;
+    padding: 80px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
-.item .logo{
-  color: white;
-  font-size: 40px;
+.item .logo {
+    color: white;
+    font-size: 40px;
 }
 
-.text-item h2{
-  font-size: 30px;
-  line-height: 1;
+.text-item h2 {
+    font-size: 30px;
+    line-height: 1;
 }
 
-.container .login-section{
-   position: absolute;
+.container .login-section {
+    position: absolute;
     top: 0;
     right: 0;
     width: calc(100% - 58%);
@@ -154,21 +162,21 @@ border: var(--dark_brown);
     color: #fff;
 }
 
-.login-section .form-box{
-  position: absolute;
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.login-section .form-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-.login-section .form-box h2{
-  text-align: center;
-  font-size: 25px;
+.login-section .form-box h2 {
+    text-align: center;
+    font-size: 25px;
 }
 
-.form-box .input-box{
+.form-box .input-box {
     width: 340px;
     height: 50px;
     border-bottom: 2px solid#fff;
@@ -176,17 +184,17 @@ border: var(--dark_brown);
     position: relative;
 }
 
-.form-box input{
-  height: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  padding-right: 28px;
-  color: var(--white);
+.form-box input {
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-right: 28px;
+    color: var(--white);
 }
 
-.input-box label{
+.input-box label {
     position: absolute;
     top: 50%;
     left: 0;
@@ -195,24 +203,22 @@ border: var(--dark_brown);
     font-weight: 600;
     pointer-events: none;
     transition: .5s ease;
-
 }
 
-.input-box input:focus~ label,
-.input-box input:valid~ label{
+.input-box input:focus~label,
+.input-box input:valid~label {
     top: -5px;
 }
 
-.remember-password{
+.remember-password {
     font-size: 14px;
     font-weight: 500;
-    margin: -15px 0 15px ;
+    margin: -15px 0 15px;
     display: flex;
     align-items: center;
 }
 
-
-.remember-password label input{
+.remember-password label input {
     accent-color: #fff;
     margin-right: 3px;
 }
@@ -246,7 +252,7 @@ border: var(--dark_brown);
     color: var(--brown);
 }
 
-.btn{
+.btn {
     background: #fff;
     width: 50%;
     height: 45px;
@@ -260,8 +266,8 @@ border: var(--dark_brown);
     left: 78px;
 }
 
-.btn:hover{
-  background-color: #fff;
+.btn:hover {
+    background-color: #fff;
 }
 
 .create-account a.login-link {
@@ -275,24 +281,12 @@ border: var(--dark_brown);
     color: var(--brown);
 }
 
-
-:root {
-    --light-gray: #f0f2f5;
-    --medium-gray: #e0e0e0;
-    --dark-gray: #666;
-    --border-color: #ddd;
-    --card-background: #fff;
-    --header-bg: #222; /* Dark background for header */
-    --header-text: #fff;
-    --input-bg: #f9f9f9;
-}
-
 body {
     font-family: "geist";
     margin: 0;
     padding: 0;
     background-color: var(--light-gray);
-    color: var(--dark_brown); /* Adjusted to ensure text is visible */
+    color: var(--dark_brown);
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -314,7 +308,9 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.header-left, .header-center, .header-right {
+.header-left,
+.header-center,
+.header-right {
     display: flex;
     align-items: center;
 }
@@ -373,7 +369,8 @@ body {
     font-size: 1.2em;
 }
 
-.notification-icon, .profile-icon {
+.notification-icon,
+.profile-icon {
     color: var(--white);
     font-size: 1.5em;
     margin-left: 20px;
@@ -388,7 +385,7 @@ body {
 }
 
 .left-column {
-    flex: 1 1 55%; 
+    flex: 3 1 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -397,7 +394,7 @@ body {
 h2 {
     font-size: 1.4em;
     font-weight: 600;
-    color: var(--white);
+    color: var(--brown);
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -453,7 +450,7 @@ h2 {
     margin-top: 10px;
     margin-bottom: 10px;
     max-height: 200px;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 .media-preview-item {
@@ -482,6 +479,7 @@ h2 {
     top: 5px;
     right: 5px;
     background-color: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
     color: white;
     border-radius: 50%;
     width: 20px;
@@ -515,7 +513,6 @@ h2 {
     margin-top: -13px;
 }
 
-
 .actions .icon-group {
     display: flex;
     gap: 15px;
@@ -529,11 +526,11 @@ h2 {
 }
 
 .actions .material-icons:hover {
-    color: var(--primary-blue); /* You might want to define --primary-blue or use an existing color */
+    color: var(--primary-blue);
 }
 
 .upload-button {
-    background-color: var(--dark_brown); /* Changed to dark brown as per screenshot */
+    background-color: var(--dark_brown);
     color: white;
     border: none;
     padding: 8px 20px;
@@ -552,13 +549,14 @@ h2 {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    flex: 1 1 40%;
 }
 
 .event-card {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
 }
 
 .event-image-placeholder {
@@ -586,18 +584,16 @@ h2 {
     color: var(--dark-gray);
 }
 
-
-/* Trending Section */
 .trending-section {
     background-color: var(--card-background);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    flex: 1 1 40%; /* Takes about 40% of the space */
-    min-width: 300px; /* Ensure it doesn't get too small */
-    max-height: 600px; /* Fixed height */
-    overflow-y: auto; /* Enable vertical scrollbar */
-    padding-right: 10px; /* Space for scrollbar */
+    flex: 1 1 40%;
+    min-width: 300px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .post-card {
@@ -606,7 +602,7 @@ h2 {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border: 1px #ddd ;
+    border: 1px #ddd;
 }
 
 .post-header {
@@ -649,19 +645,31 @@ h2 {
 .post-media {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; 
-    background-color: #000;
     border-radius: 8px;
     overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 350px; 
+    background-color: #f0f0f0;
 }
 
-.post-media iframe { 
-    position: absolute;
+.post-media img,
+.post-media video {
+    width: 100%; 
+    height: auto; 
+    max-height: 400px; 
+    object-fit:cover; 
+    display: block; 
+}
+
+.post-media iframe {
+    position: absolute; /* Tetap pertahankan untuk iframe YouTube */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border: none; 
+    border: none;
 }
 
 .events-container {
@@ -670,31 +678,117 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.post-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.post-actions button {
+    width: fit-content;
+    padding: 6px 12px;
+    border: none;
+    background-color: var(--dark_brown);
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+
+.post-actions button:hover {
+    color: var(--brown);
+}
+
+.post-actions button .material-icons {
+    font-size: 18px;
+    color: white;
+}
+
+.comment-section {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--light_gray);
+    border-radius: 8px;
+    width: 100%;
+}
+
+.comment-input {
+    font-family: "geist", sans-serif;
+    width: calc(100% - 20px);
+    min-height: 60px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid var(--medium-gray);
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.comment-section .submit-comment {
+    background-color: var(--dark_brown);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 14px;
+}
+
+.comment-section .submit-comment:hover {
+    background-color: var(--dark_brown);
+    color: var(--brown);
+}
+
+.comment-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.comment-list li {
+    background-color: var(--medium-gray);
+    margin-bottom: 8px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .hero-banner-image-only {
     width: 100%;
-    height: 400px; /* <-- Atur tinggi yang kamu inginkan, misalnya 300px */
-    overflow: hidden; /* Penting untuk memotong bagian gambar yang berlebih */
-    display: flex; /* Tambahkan ini jika ingin menengahkan gambar di dalamnya */
+    height: 400px;
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .full-width-banner-img {
     width: 100%;
-    height: 100%; /* <-- Gambar akan mengisi tinggi container */
-    object-fit: cover; /* <-- Sangat penting: memastikan gambar mengisi ruang tanpa terdistorsi */
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
 .upcoming-events {
-    padding: 50px 10%; 
+    padding: 50px 10%;
     background-color: #f0f0f0;
 }
 
 .upcoming-events h2 {
     font-size: 32px;
     font-weight: 700;
-    color:var(--brown);    
+    color: var(--brown);
     margin-bottom: 40px;
     text-align: center;
 }
@@ -702,36 +796,37 @@ h2 {
 .event-list {
     display: flex;
     flex-direction: column;
-    gap: 30px; 
-    max-width: 900px; 
-    margin: 0 auto; 
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .event-item {
+    text-decoration: none;
     display: flex;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    overflow: hidden; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
 .event-image {
-    flex-shrink: 0; 
-    width: 250px; 
-    height: 180px; 
-    border-radius: 10px 0 0 10px; 
+    flex-shrink: 0;
+    width: 250px;
+    height: auto;
+    border-radius: 10px 0 0 10px;
     overflow: hidden;
 }
 
 .event-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    display: block; 
+    object-fit: cover;
+    display: block;
 }
 
 .event-details2 {
-    flex-grow: 1; 
+    flex-grow: 1;
     padding: 20px 25px;
 }
 
@@ -762,18 +857,17 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #F8F8F8; 
+    background-color: #F8F8F8;
     border-left: 1px solid #eee;
     font-size: 16px;
     font-weight: 600;
     color: #555;
-    width: 150px; 
+    width: 150px;
     text-align: center;
 }
 
-
 .footer {
-    background-color:var(--brown); 
+    background-color: var(--brown);
     color: white;
     padding: 50px 10%;
     font-size: 15px;
@@ -782,17 +876,16 @@ h2 {
 .footer-content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; 
-    max-width: 1200px; 
+    flex-wrap: wrap;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .footer-column {
-    flex: 1; 
-    min-width: 180px; 
-    margin-bottom: 30px; 
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 30px;
 }
-
 
 .footer-column h4 {
     font-size: 18px;
@@ -809,7 +902,7 @@ h2 {
 
 .footer-column ul li {
     margin-bottom: 10px;
-    display: flex; 
+    display: flex;
     align-items: center;
 }
 
@@ -830,4 +923,3 @@ h2 {
     height: 18px;
     margin-right: 8px;
 }
-
