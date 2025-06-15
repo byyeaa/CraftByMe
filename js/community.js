@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 reader.onload = (e) => {
                     const mediaElement = document.createElement('video');
                     mediaElement.src = e.target.result;
-                    mediaElement.controls = false; 
+                    mediaElement.controls = false;
                     mediaElement.autoplay = false;
                     mediaElement.muted = true;
                     mediaElement.loop = true;
@@ -78,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (file.type.includes('zip') || file.name.includes('.zip') || file.name.includes('.rar')) {
                     fileIconClass = 'folder_zip';
                 }
-
 
                 const icon = document.createElement('span');
                 icon.classList.add('material-icons', 'file-icon');
@@ -137,7 +136,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            alert('Upload functionality would be triggered here with text and media!');
+            const trendingSection = document.querySelector('.trending-section');
+            const postCard = document.createElement('div');
+            postCard.classList.add('post-card');
+
+            postCard.innerHTML = `
+                <div class="post-header">
+                    <img src="../assets/gudetama.jpg" class="user-avatar-small-placeholder">
+                    <div class="post-meta">
+                        <div class="post-username">craffyyyt</div>
+                        <div class="post-time">just now</div>
+                    </div>
+                </div>
+            `;
+
+            const postTextElement = document.createElement('p');
+            postTextElement.classList.add('post-text');
+            postTextElement.textContent = postText;
+            postCard.appendChild(postTextElement);
+
+            if (selectedMediaFiles.length > 0) {
+                const mediaContainer = document.createElement('div');
+                mediaContainer.classList.add('post-media');
+
+                selectedMediaFiles.forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        if (file.type.startsWith('image/')) {
+                            const img = document.createElement('img');
+                            img.src = e.target.result;
+                            img.style.maxWidth = '100%';
+                            mediaContainer.appendChild(img);
+                        } else if (file.type.startsWith('video/')) {
+                            const video = document.createElement('video');
+                            video.src = e.target.result;
+                            video.controls = true;
+                            video.style.maxWidth = '100%';
+                            mediaContainer.appendChild(video);
+                        } else {
+                            const fileInfo = document.createElement('div');
+                            fileInfo.innerHTML = `<p>${file.name}</p>`;
+                            fileInfo.style.padding = '8px';
+                            fileInfo.style.border = '1px solid #ccc';
+                            mediaContainer.appendChild(fileInfo);
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+
+                postCard.appendChild(mediaContainer);
+            }
+
+            trendingSection.insertBefore(postCard, trendingSection.children[1]);
 
             whatHappeningInput.value = '';
             selectedMediaFiles = [];
@@ -146,6 +196,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateMediaPreview();
-
-    
 });
