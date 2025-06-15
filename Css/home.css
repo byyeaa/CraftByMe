@@ -25,7 +25,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--light-gray);
-    color: var(--dark_brown); /* Adjusted to ensure text is visible */
+    color: var(--dark_brown); 
     display: flex;
     justify-content: center;
     min-height: 100vh;
@@ -196,11 +196,11 @@ margin-bottom: 30px;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    flex: 1 1 40%; /* Takes about 40% of the space */
-    min-width: 300px; /* Ensure it doesn't get too small */
-    max-height: 600px; /* Fixed height */
-    overflow-y: auto; /* Enable vertical scrollbar */
-    padding-right: 10px; /* Space for scrollbar */
+    flex: 1 1 40%; 
+    min-width: 300px; 
+    max-height: 600px; 
+    overflow-y: auto; 
+    padding-right: 10px; 
 }
 
 
@@ -231,20 +231,19 @@ margin-bottom: 30px;
 }
 
 .post-media {
-    position: relative; /* Penting jika ada elemen child yang menggunakan positioning absolut */
-    width: 100%; /* Pastikan mengambil seluruh lebar dari parent-nya (.post-card) */
-    aspect-ratio: 16 / 9; /* **Ini kuncinya:** Menetapkan rasio aspek 16:9 untuk kontainer */
-    overflow: hidden; /* Pastikan konten yang melebihi batas kontainer disembunyikan (untuk object-fit) */
-    border-radius: 8px; /* Sesuaikan dengan border-radius kartu jika ada */
-    margin-bottom: 15px; /* Contoh: beri sedikit jarak di bawah media */
+    position: relative; 
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    overflow: hidden; 
+    border-radius: 8px; 
+    margin-bottom: 15px;
 }
 
 .post-media img {
-    width: 100%; /* Memenuhi lebar kontainer .post-media */
-    height: 100%; /* Memenuhi tinggi kontainer .post-media (sesuai aspect-ratio) */
-    object-fit: cover; /* **Penting:** Memastikan gambar mengisi seluruh area tanpa distorsi,
-                            namun bisa ada cropping pada bagian gambar yang tidak pas dengan rasio 16:9 */
-    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
 }
 
 .post-media iframe {
@@ -298,10 +297,10 @@ margin-bottom: 30px;
     line-height: 1.6;
 }
 
-/* Styling untuk bagian "FOR YOU" secara keseluruhan */
+
 .for-you {
-    padding: 40px 20px; /* Padding di sekitar bagian ini */
-    text-align: center; /* Untuk memusatkan grid secara keseluruhan (opsional, bisa dihapus jika h2 di-left-align) */
+    padding: 40px 20px;
+    text-align: center; 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
