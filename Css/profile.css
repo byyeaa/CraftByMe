@@ -439,13 +439,13 @@ body {
 }
 
 .follow-button.followed {
-    background-color: var(--white); /* Latar belakang putih */
-    color: var(--primary-brown); /* Teks warna coklat utama */
-    border: 1px solid var(--primary-brown); /* Border coklat */
+    background-color: var(--white); 
+    color: var(--primary-brown); 
+    border: 1px solid var(--primary-brown);
 }
 
 .follow-button.followed:hover {
-    background-color: var(--light-grey); /* Warna sedikit berbeda saat hover di status "followed" */
+    background-color: var(--light-grey);
     color: var(--primary-brown);
     border-color: var(--primary-brown);
 }

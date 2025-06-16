@@ -11,8 +11,8 @@
     --header-bg: #222;
     --header-text: #fff;
     --input-bg: #f9f9f9;
-    --accent_color: #735140; /* Defined based on your use */
-    --dark_accent_color: #1A120B; /* Defined based on your use */
+    --accent_color: #735140; 
+    --dark_accent_color: #1A120B; 
 }
 
 * {
@@ -664,7 +664,7 @@ h2 {
 }
 
 .post-media iframe {
-    position: absolute; /* Tetap pertahankan untuk iframe YouTube */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
@@ -820,7 +820,7 @@ h2 {
 
 .event-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
