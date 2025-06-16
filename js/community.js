@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const postCard = document.createElement('div');
             postCard.classList.add('post-card');
 
-            // Create post header and text
+            
             postCard.innerHTML = `
                 <div class="post-header">
                     <img src="../assets/gudetama.jpg" class="user-avatar-small-placeholder">
@@ -152,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="post-text">${postText}</p>
             `;
 
-            // Append media container if files are selected
             if (selectedMediaFiles.length > 0) {
                 const mediaContainer = document.createElement('div');
                 mediaContainer.classList.add('post-media');
@@ -194,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 postCard.appendChild(mediaContainer);
             }
 
-            // Append post actions and comment section
             const postActionsHTML = `
                 <div class="post-actions">
                     <button class="like-button"><span class="material-icons">favorite</span> Like (<span class="like-count">0</span>)</button>
@@ -211,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             postCard.insertAdjacentHTML('beforeend', postActionsHTML);
 
-            // Insert the new post at the second position in trending section
             const h2Element = trendingSection.querySelector('h2');
             if (h2Element && trendingSection.children.length > 1) {
                 trendingSection.insertBefore(postCard, trendingSection.children[1]);
@@ -219,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 trendingSection.appendChild(postCard);
             }
 
-            // Add event listeners for the newly created post
             const newLikeButton = postCard.querySelector(".like-button");
             const newCommentToggleButton = postCard.querySelector(".comment-toggle-button");
             const newBookmarkButton = postCard.querySelector(".bookmark-button");
@@ -245,13 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // PERBAIKAN: Menggunakan .closest('.post-card') untuk mencari comment-section
             newCommentToggleButton.addEventListener("click", () => {
                 const commentSection = newCommentToggleButton.closest('.post-card').querySelector(".comment-section");
                 commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
             });
 
-            // PERBAIKAN: Menggunakan .closest('.comment-section') untuk mencari comment-list
             newSubmitCommentButton.addEventListener("click", () => {
                 const commentInput = newSubmitCommentButton.parentElement.querySelector(".comment-input");
                 const commentList = newSubmitCommentButton.closest('.comment-section').querySelector(".comment-list");
@@ -311,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     commentToggles.forEach((toggle) => {
         toggle.addEventListener("click", () => {
-            // PERBAIKAN: Menggunakan .closest('.post-card') untuk mencari comment-section pada post yang sudah ada
             const commentSection = toggle.closest('.post-card').querySelector(".comment-section");
             commentSection.style.display = commentSection.style.display === "none" ? "block" : "none";
         });
@@ -320,7 +313,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll(".submit-comment").forEach((btn) => {
         btn.addEventListener("click", () => {
             const commentInput = btn.parentElement.querySelector(".comment-input");
-            // PERBAIKAN: Menggunakan .closest('.comment-section') untuk mencari comment-list pada post yang sudah ada
             const commentList = btn.closest('.comment-section').querySelector(".comment-list");
 
             if (commentInput.value.trim()) {

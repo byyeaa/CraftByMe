@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('submit-button');
 
     if (eventId) {
-        // Isi detail event di halaman
         eventMainTitle.textContent = eventName || 'Event Details';
         eventDescriptionFull.textContent = eventDescription || 'No description available.';
         eventDateEl.textContent = eventDate || 'Date not specified';
@@ -32,28 +31,25 @@ document.addEventListener('DOMContentLoaded', function() {
             eventImageEl.src = eventImage;
             eventImageEl.alt = eventName || 'Event Image';
         } else {
-            eventImageEl.style.display = 'none'; // Sembunyikan gambar jika tidak ada
+            eventImageEl.style.display = 'none'; 
         }
 
-        // Isi hidden input di formulir
         hiddenEventIdInput.value = eventId;
         hiddenEventNameInput.value = eventName || '';
 
     } else {
-        // Jika tidak ada eventId di URL, tampilkan pesan error atau arahkan kembali
         eventMainTitle.textContent = 'Event Not Found!';
         eventDescriptionFull.textContent = 'Please go back to the events page and select an event.';
-        registrationForm.style.display = 'none'; // Sembunyikan formulir
-        eventImageEl.style.display = 'none'; // Sembunyikan gambar placeholder
+        registrationForm.style.display = 'none'; 
+        eventImageEl.style.display = 'none'; 
         eventDateEl.style.display = 'none';
         eventTimeEl.style.display = 'none';
         submitButton.textContent = 'Go to Events Page';
-        submitButton.onclick = () => window.location.href = 'events.html'; // Arahkan kembali ke halaman events
+        submitButton.onclick = () => window.location.href = 'events.html'; 
     }
 
-    // Contoh: Mengirim data formulir (Anda perlu mengganti ini dengan logik backend Anda)
     registrationForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Mencegah form submit default
+        event.preventDefault(); 
 
         const formData = new FormData(registrationForm);
         const data = {};
